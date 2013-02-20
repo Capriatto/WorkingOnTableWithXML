@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tabla>
+
+<empresa >
+
+  <nit>94285631</nit>
+  <razonsocial>ZETA</razonsocial>
+  <pbx>6852231</pbx>
+  <direccion>CALLE 48 NO. 45 - 49</direccion>
+  <email></email>
+  
+</empresa>
+
+<empresa >
+
+  <nit>69</nit>
+  <razonsocial>GOOGLE</razonsocial>
+  <pbx>66696969</pbx>
+  <direccion>LOCALHOST</direccion>
+  <email></email>
+</empresa>
+
+<empresa >
+
+  <nit>70</nit>
+  <razonsocial>DELL INC</razonsocial>
+  <pbx>66698741</pbx>
+  <direccion>AV  123456</direccion>
+  <email></email>
+</empresa>
+
+<empresa >
+
+  <nit>1113303796</nit>
+  <razonsocial>CODE DEV</razonsocial>
+  <pbx>2197604</pbx>
+  <direccion>LOCALHOST</direccion>
+  <email>gaso@dev.com.co</email>
+</empresa>
+
+<empresa >
+
+  <nit>96</nit>
+  <razonsocial>test</razonsocial>
+  <pbx>123</pbx>
+  <direccion>adsa</direccion>
+  <email></email>
+</empresa>
+
+<empresa >
+
+  <nit>1111</nit>
+  <razonsocial>ASUS INC</razonsocial>
+  <pbx>3116028895</pbx>
+  <direccion>CALLE 48 NO. 45 - 49</direccion>
+  <email>ventas@asus.com.co</email>
+</empresa>
+
+<empresa >
+
+  <nit>987654321</nit>
+  <razonsocial>DAVIVIENDA</razonsocial>
+  <pbx>546123</pbx>
+  <direccion>LOCALHOST</direccion>
+  <email></email>
+</empresa>
+
+<empresa >
+
+  <nit>123456789</nit>
+  <razonsocial>OPA ORDENAMIENTOS PROFESIONALES AUTOMATIZADOS</razonsocial>
+  <pbx>654321</pbx>
+  <direccion>CRA 5 CALLE ENCUENTRELA</direccion>
+  <email>opaltda@opa.com.co</email>
+</empresa>
+
+<empresa >
+
+  <nit>800069925</nit>
+  <razonsocial>COFINCAFE</razonsocial>
+  <pbx>7413108</pbx>
+  <direccion>CRA 16 #20-06</direccion>
+  <email>info@cofincafe.com</email>
+  
+</empresa>
+
+</tabla>
+
