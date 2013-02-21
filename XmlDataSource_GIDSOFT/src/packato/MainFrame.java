@@ -21,125 +21,128 @@ import org.xml.sax.SAXParseException;
  * @author oky
  */
 public class MainFrame extends javax.swing.JFrame {
-int variableContadora;
+
+    int variableContadora;
+
     /**
      * Creates new form MainFrame
      */
     public MainFrame() {
         initComponents();
-        cargarXml();  
         configTable();
-       
-     
-       variableContadora=0;
+        variableContadora = 0;
     }
 
-    private void cargarXml(){
-        try {      
+    private void cargarXml() {
+        try {
             DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
-                        DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-                        Document doc = docBuilder.parse (new File("tabla_clientes.xml"));
-                    
-                         doc.getDocumentElement ().normalize ();
-                         NodeList listaEmpresa= doc.getElementsByTagName("empresa");
-                                doc.getDocumentElement().getNodeName();
-                         
-                         for ( int i = 0; i< listaEmpresa.getLength(); i++) {
+            DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+            Document doc = docBuilder.parse(new File("tabla_clientes.xml"));
+
+            doc.getDocumentElement().normalize();
+            NodeList listaEmpresa = doc.getElementsByTagName("empresa");
+            doc.getDocumentElement().getNodeName();
+
+            for (int i = 0; i < listaEmpresa.getLength(); i++) {
                 variableContadora++;
-                Node firstEmpresaNode =listaEmpresa.item(i);
-                if(firstEmpresaNode.getNodeType() == Node.ELEMENT_NODE){
+                Node firstEmpresaNode = listaEmpresa.item(i);
+                if (firstEmpresaNode.getNodeType() == Node.ELEMENT_NODE) {
 
 
-                    Element firstEmpresaElement = (Element)firstEmpresaNode;
-                    System.out.println("empresa numero:".concat(String.valueOf(i+1)));
-                    
-                    
-                  NodeList firstNitList = firstEmpresaElement.getElementsByTagName("nit");
-                    Element firstNitElement = (Element)firstNitList.item(0);
+                    Element firstEmpresaElement = (Element) firstEmpresaNode;
+                    System.out.println("empresa numero:".concat(String.valueOf(i + 1)));
+                    tabla.setValueAt("empresa numero " + (i + 1), i, 0);
+
+                    NodeList firstNitList = firstEmpresaElement.getElementsByTagName("nit");
+                    Element firstNitElement = (Element) firstNitList.item(0);
 
                     NodeList textNitList = firstNitElement.getChildNodes();
-                    
-                    System.out.println("Nit : " + 
-                           ((Node)textNitList.item(0)).getNodeValue().trim());
-                    String nit=((Node)textNitList.item(0)).getNodeValue().trim();
-                   
-                    //-----
-                    
-                      NodeList razonSocialList = firstEmpresaElement.getElementsByTagName("razonsocial");
-                    Element razonSocialElement = (Element)razonSocialList .item(0);
-                   
-                    NodeList textRazonSocialList =razonSocialElement.getChildNodes();
-                    
-                    System.out.println("Razon social: " + 
-                           ((Node)textRazonSocialList .item(0)).getNodeValue().trim());
-                      String razonSocial= ((Node)textRazonSocialList .item(0)).getNodeValue().trim();
-//                    tabla.setValueAt(razonSocial, i, i);
-                        //-----
-                    
-                     NodeList pbxList = firstEmpresaElement.getElementsByTagName("pbx");
-                    Element pbxElement = (Element)pbxList .item(0);
 
-                    NodeList textpbxList =pbxElement.getChildNodes();
-                    System.out.println("Pbx: " + 
-                           ((Node)textpbxList .item(0)).getNodeValue().trim());
-                    //-----
-                     NodeList direccionList = firstEmpresaElement.getElementsByTagName("direccion");
-                    Element direccionElement = (Element)direccionList .item(0);
+                    System.out.println("Nit : "
+                            + ((Node) textNitList.item(0)).getNodeValue().trim());
+                    String nit = ((Node) textNitList.item(0)).getNodeValue().trim();
+                    tabla.setValueAt(nit, i, 1);
 
-                    NodeList textdireccionList =direccionElement.getChildNodes();
-                    System.out.println("direccion: " + 
-                           ((Node)textdireccionList  .item(0)).getNodeValue().trim());
-                  //-----------
-                    
-                  
-                    
+                    //-----
+
+                    NodeList razonSocialList = firstEmpresaElement.getElementsByTagName("razonsocial");
+                    Element razonSocialElement = (Element) razonSocialList.item(0);
+
+                    NodeList textRazonSocialList = razonSocialElement.getChildNodes();
+
+                    System.out.println("Razon social: "
+                            + ((Node) textRazonSocialList.item(0)).getNodeValue().trim());
+                    String razonSocial = ((Node) textRazonSocialList.item(0)).getNodeValue().trim();
+                    tabla.setValueAt(razonSocial, i, 2);
+                    //-----
+
+                    NodeList pbxList = firstEmpresaElement.getElementsByTagName("pbx");
+                    Element pbxElement = (Element) pbxList.item(0);
+
+                    NodeList textpbxList = pbxElement.getChildNodes();
+                    System.out.println("Pbx: "
+                            + ((Node) textpbxList.item(0)).getNodeValue().trim());
+                    String pbx = ((Node) textpbxList.item(0)).getNodeValue().trim();
+                    tabla.setValueAt(pbx, i, 3);
+                    //-----
+                    NodeList direccionList = firstEmpresaElement.getElementsByTagName("direccion");
+                    Element direccionElement = (Element) direccionList.item(0);
+
+                    NodeList textdireccionList = direccionElement.getChildNodes();
+                    System.out.println("direccion: "
+                            + ((Node) textdireccionList.item(0)).getNodeValue().trim());
+                    String direccion = ((Node) textdireccionList.item(0)).getNodeValue().trim();
+//                    tabla.setValueAt(direccion, i, 4);
+                    //-----------
+
+
+
                     try {
-                        NodeList  emailList= firstEmpresaElement.getElementsByTagName("email");
-                    Element emailElement = (Element)emailList.item(0);
+                        NodeList emailList = firstEmpresaElement.getElementsByTagName("email");
+                        Element emailElement = (Element) emailList.item(0);
 
-                    NodeList textemailList =emailElement.getChildNodes();
-                    System.out.println("email: " + 
-                           ((Node)textemailList  .item(0)).getNodeValue().trim());
-                             System.out.println("\n"+"--------------"+"\n");
+                        NodeList textemailList = emailElement.getChildNodes();
+                        System.out.println("email: "
+                                + ((Node) textemailList.item(0)).getNodeValue().trim());
+                        String email = ((Node) textemailList.item(0)).getNodeValue().trim();
+                        tabla.setValueAt(email, i, 5);
+                        System.out.println("\n" + "--------------" + "\n");
                     } catch (Exception e) {
-                        System.out.println("email:"+" no tiene email");
-                        System.out.println("\n"+"--------------"+"\n");
+                        System.out.println("email:" + " no tiene email");
+                        System.out.println("\n" + "--------------" + "\n");
+                        String alert = "sin email";
+                        tabla.setValueAt(alert, i, 5);
+
                     }
-                     
-                    
+
+
                 }
-          
-                         }
-        }catch (SAXParseException err) {
-        System.out.println ("** Parsing error" + ", line " 
-             + err.getLineNumber () + ", uri " + err.getSystemId ());
-        System.out.println(" " + err.getMessage ());
 
-        }catch (SAXException e) {
-        Exception x = e.getException ();
-        ((x == null) ? e : x).printStackTrace ();
+            }
+        } catch (SAXParseException err) {
+            System.out.println("** Parsing error" + ", line "
+                    + err.getLineNumber() + ", uri " + err.getSystemId());
+            System.out.println(" " + err.getMessage());
 
-        }catch (Throwable t) {
-        t.printStackTrace ();
+        } catch (SAXException e) {
+            Exception x = e.getException();
+            ((x == null) ? e : x).printStackTrace();
+
+        } catch (Throwable t) {
+            t.printStackTrace();
         }
-}
-    
+    }
+
     //******************************
-    private void configTable(){
-        Object columnNames[]={"Número empresa","nit","Razon Social","Pbx","Direccion","email"}; 
-        int rowCount=variableContadora;
-        DefaultTableModel modelo = new DefaultTableModel(columnNames,rowCount);
+    private void configTable() {
+        Object columnNames[] = {"Número empresa", "nit", "Razon Social", "Pbx", "Direccion", "email"};
+        int rowCount =10;
+        DefaultTableModel modelo = new DefaultTableModel(columnNames, rowCount);
         tabla.setModel(modelo);
-       tabla.setSelectionBackground(Color.GRAY.brighter());
+        tabla.setSelectionBackground(Color.GRAY.brighter());
     }
     //****************************
-    
-    private void montandoDatos(){
-           
-        
-    }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -180,24 +183,29 @@ int variableContadora;
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(197, 197, 197)
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(198, 198, 198)
                 .addComponent(accionar)
-                .addGap(297, 382, Short.MAX_VALUE))
-            .addComponent(jScrollPane2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(7, 7, 7)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(accionar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(accionar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void accionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionarActionPerformed
-cargarXml();        // TODO add your handling code here:
+        cargarXml();        // TODO add your handling code here:
     }//GEN-LAST:event_accionarActionPerformed
 
     /**
