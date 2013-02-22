@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="net.sourceforge.jdatepicker.impl.DateComponentFormatter" name="dateComponentFormatter1">
+    </Component>
+    <Component class="net.sourceforge.jdatepicker.impl.SqlDateModel" name="sqlDateModel1">
+    </Component>
+    <Component class="net.sourceforge.jdatepicker.impl.DateComponentFormatter" name="dateComponentFormatter2">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="resizable" type="boolean" value="false"/>

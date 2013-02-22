@@ -153,6 +153,9 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dateComponentFormatter1 = new net.sourceforge.jdatepicker.impl.DateComponentFormatter();
+        sqlDateModel1 = new net.sourceforge.jdatepicker.impl.SqlDateModel();
+        dateComponentFormatter2 = new net.sourceforge.jdatepicker.impl.DateComponentFormatter();
         accionar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
@@ -216,7 +219,10 @@ public class MainFrame extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton accionar;
+    private net.sourceforge.jdatepicker.impl.DateComponentFormatter dateComponentFormatter1;
+    private net.sourceforge.jdatepicker.impl.DateComponentFormatter dateComponentFormatter2;
     private javax.swing.JScrollPane jScrollPane2;
+    private net.sourceforge.jdatepicker.impl.SqlDateModel sqlDateModel1;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 }
